@@ -2,7 +2,7 @@ package com.SurveyMonkey.model.questions.types;
 
 import java.util.ArrayList;
 
-public class QCheckbox extends QType {
+public class QCheckbox extends QuestionType {
     private ArrayList<String> options;
 
 

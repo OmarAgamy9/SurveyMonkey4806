@@ -1,21 +1,21 @@
 package com.SurveyMonkey.model.questions;
 
-import com.SurveyMonkey.model.questions.types.QType;
+import com.SurveyMonkey.model.questions.types.QuestionType;
 
 import java.util.HashMap;
 
 public class Questions {
 
-    private HashMap<Integer, QType> questions;
+    private HashMap<Integer, QuestionType> questions;
 
     public Questions() {
     }
 
-    public HashMap<Integer, QType> getQuestions() {
+    public HashMap<Integer, QuestionType> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(HashMap<Integer, QType> questions) {
+    public void setQuestions(HashMap<Integer, QuestionType> questions) {
         this.questions = questions;
     }
 }

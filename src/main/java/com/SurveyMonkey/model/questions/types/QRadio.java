@@ -2,7 +2,7 @@ package com.SurveyMonkey.model.questions.types;
 
 import java.util.ArrayList;
 
-public class QRadio extends QType {
+public class QRadio extends QuestionType {
     private ArrayList<String> options;
 
 
