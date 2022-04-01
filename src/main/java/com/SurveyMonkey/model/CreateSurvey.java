@@ -15,11 +15,14 @@ public class CreateSurvey {
 
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<MultipleChoiceQuestion> multipleChoiceQuestions;
-
-
+    //For the long term questions
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<OpenEndedQuestion> OpenEndedQuestion;
 
     public CreateSurvey() {
-        multipleChoiceQuestions= new ArrayList<MultipleChoiceQuestion>();
+        multipleChoiceQuestions= new ArrayList<>();
+        OpenEndedQuestion = new ArrayList<>();
+
     }
 
     public Long getId() {
@@ -41,14 +44,25 @@ public class CreateSurvey {
     public List<MultipleChoiceQuestion> getMultipleChoiceQuestions() {
         return multipleChoiceQuestions;
     }
+    //This method would return all the open ended questions
+    public List<OpenEndedQuestion> getOpenEndedQuestions() {
+        return OpenEndedQuestion;
+    }
 
     public void setMultipleChoiceQuestions(List<MultipleChoiceQuestion> multipleChoiceQuestions) {
         this.multipleChoiceQuestions = multipleChoiceQuestions;
     }
 
+    public void setOpenEndedQuestions(List<OpenEndedQuestion> OpenEndedQuestion) {
+        this.OpenEndedQuestion = OpenEndedQuestion;
+    }
 
     public void addQuestion(MultipleChoiceQuestion mcqQuestion){
         multipleChoiceQuestions.add(mcqQuestion);
+    }
+
+    public void addOpenEndedQuestion(OpenEndedQuestion openEndedQuestion){
+        OpenEndedQuestion.add(openEndedQuestion);
     }
 
     public void removeQuestion(MultipleChoiceQuestion mcq){
@@ -59,8 +73,8 @@ public class CreateSurvey {
     @Override
     public String toString() {
         return String.format(
-                "Questions number is: [number=%d]",
-                this.multipleChoiceQuestions.size());
+                "Number of questions: [number=%d]\nQ1: %s",
+                this.multipleChoiceQuestions.size(), this.multipleChoiceQuestions.get(0));
     }
 
 }
