@@ -1,19 +1,19 @@
-package com.SurveyMonkey;
+package com.SurveyMonkey.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.SurveyMonkey.controller.SurveyController;
+import com.SurveyMonkey.controller.HomePageController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
-public class SurveyControllerTests {
+public class HomePageControllerTests {
 
     @Autowired
-    private SurveyController surveyController;
+    private HomePageController homePageController;
 
     @Test
     public void contextLoads() throws Exception {
-        assertThat(surveyController).isNotNull();
+        assertThat(homePageController).isNotNull();
     }
 }
