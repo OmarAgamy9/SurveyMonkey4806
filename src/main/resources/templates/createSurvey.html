@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Surveyor: Create Survey Page</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
-    <script type="text/javascript" src="/scripts/createSurvey.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script type="text/javascript" src="scripts/createSurvey.js"></script>
 </head>
 <body>
   <h2>Create Survey</h2>
@@ -16,7 +16,7 @@
   <br>
 
   <div class="surveyQuestions">
-    <button type="button" onclick="addQuestion()">Add question</button>
+    <button id="addQuestionButton" type="button">Add question</button>
   </div>
 
   <div id="addQuestion">
@@ -33,30 +33,7 @@
 
   <script type="text/javascript">
 
-      var increment = 0;
-      let button = "question";
-      element.addEventListener("click", addQuestion);
 
-        function addQuestion() {
-        increment = increment+1;
-        button = "question" + increment;
-
-          document.getElementById("addQuestion").insertAdjacentHTML("afterend",
-                "<form id='qbutton' class='selectQuestion'><h4>Select type of Question</h4><br><select name='questionTypes' id='questionTypes'><option value='multipleChoice'>Multiple Choice Question</option><option value='dropDown'>Drop Down Question</option></select><button type='button' onclick='removeQuestion(this)' >Remove question</button></form>");
-          document.getElementById("qbutton").id = button;
-        }
-
-
-
-        function removeQuestion(th){
-        var parentDiv = th.parentNode;
-        var id = parentDiv.getAttribute("id");
-
-
-            document.getElementById(id).innerHTML = "";
-            var q = document.getElementById(id);
-            q.remove();
-        }
 
 
   </script>
