@@ -1,9 +1,6 @@
 package com.SurveyMonkey.model;
 
-import com.SurveyMonkey.model.MultipleChoiceQuestionModel;
-
 import static org.junit.Assert.*;
-import java.util.*;
 
 public class MultipleChoiceQuestionTest {
 
@@ -17,26 +14,26 @@ public class MultipleChoiceQuestionTest {
 
     @org.junit.Test
     public void addFirstChoice() {
-        mcQuestion.setChoiceOne("Test 1");
-        assertEquals("Test 1",mcQuestion.getChoiceOne());
+        mcQuestion.setOption1("Test 1");
+        assertEquals("Test 1",mcQuestion.getOption1());
     }
 
     @org.junit.Test
     public void addSecondChoice() {
-        mcQuestion.setChoiceTwo("Test 2");
-        assertEquals("Test 2",mcQuestion.getChoiceOne());
+        mcQuestion.setOption2("Test 2");
+        assertEquals("Test 2",mcQuestion.getOption1());
     }
 
     @org.junit.Test
     public void addThirdChoice() {
-        mcQuestion.setChoiceOne("Test 3");
-        assertEquals("Test 3",mcQuestion.getChoiceOne());
+        mcQuestion.setOption1("Test 3");
+        assertEquals("Test 3",mcQuestion.getOption1());
     }
 
     @org.junit.Test
     public void addFourthChoice() {
-        mcQuestion.setChoiceOne("Test 4");
-        assertEquals("Test 4",mcQuestion.getChoiceOne());
+        mcQuestion.setOption1("Test 4");
+        assertEquals("Test 4",mcQuestion.getOption1());
     }
 
 

@@ -98,16 +98,16 @@ public class EditController {
                 newQuestion.setQuestion(formData.getFirst("surveyQuestion" + number));
                 formData.remove("surveyQuestion" + number);
 
-                newQuestion.setChoiceOne(formData.getFirst("choiceOne" + number));
+                newQuestion.setOption1(formData.getFirst("choiceOne" + number));
                 formData.remove("choiceOne" + number);
 
-                newQuestion.setChoiceTwo(formData.getFirst("choiceTwo" + number));
+                newQuestion.setOption2(formData.getFirst("choiceTwo" + number));
                 formData.remove("choiceTwo" + number);
 
-                newQuestion.setChoiceThree(formData.getFirst("choiceThree" + number));
+                newQuestion.setOption3(formData.getFirst("choiceThree" + number));
                 formData.remove("choiceThree" + number);
 
-                newQuestion.setChoiceFour(formData.getFirst("choiceFour" + number));
+                newQuestion.setOption4(formData.getFirst("choiceFour" + number));
                 formData.remove("choiceFour" + number);
 
                 // ADD THE QUESTION TO THE NEW LIST FOR THE SURVEY

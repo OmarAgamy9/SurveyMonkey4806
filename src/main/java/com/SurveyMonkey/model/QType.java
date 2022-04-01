@@ -1,10 +1,19 @@
 package com.SurveyMonkey.model;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = MultipleChoiceQuestionModel.class, name = "mc"),
+        @JsonSubTypes.Type(value = OpenEndedQuestion.class, name = "oe"),
+        @JsonSubTypes.Type(value = DropDownQuestion.class, name = "dd"),
+})
 @Entity
 public abstract class QType {
     @Id
