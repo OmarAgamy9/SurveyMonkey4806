@@ -63,4 +63,8 @@ public class DropDownQuestion extends QType {
                 "Question: [id=%d, number='%s', question='%s', option1='%s', option2='%s']",
                 this.getId(), number, surveyQuestion, option1, option2);
     }
+    public static void main(String[] args) {
+        DropDownQuestion question = new DropDownQuestion(1,"name?","hassan","nasr");
+        System.out.print(question.getSurveyQuestion());
+    }
 }
