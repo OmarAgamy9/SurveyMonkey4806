@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1"/>
+    <title>Create a Drop-Down Question</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="scripts/postrequestForDropDownQuestion.js"></script>
+    <script src="scripts/getrequestForDropDownQuestion.js"></script>
+</head>
+<body>
+<div id="postResultDiv" align="center"></div>
+<div class="container">
+    <h2>Create a Drop-Down Question</h2>
+    <form id="questionForm">
+        <div class="form-group">
+            <label for="surveyQuestion">Question:</label> <input type="text"
+                                                                 class="form-control" id="surveyQuestion"
+                                                                 placeholder="Enter Your Question"
+                                                                 name="surveyQuestion">
+        </div>
+        <div class="form-group">
+            <label for="choiceOne">Choice One :</label> <input type="text"
+                                                               class="form-control" id="choiceOne"
+                                                               placeholder="Enter Choice One"
+                                                               name="choiceOne">
+        </div>
+        <div class="form-group">
+            <label for="choiceTwo">Choice Two :</label> <input type="text"
+                                                               class="form-control" id="choiceTwo"
+                                                               placeholder="Enter Choice Two"
+                                                               name="choiceTwo">
+        </div>
+
+
+        <button type="submit" class="create-question-button btn btn-primary">Create Question</button>
+    </form>
+    <br/>
+    <div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+        <button id="getQuestions" type="button" class="get-questions-button btn btn-primary">Get
+            All Questions
+        </button>
+        <div id="getResultDiv" style="padding: 20px 10px 20px 50px">
+            <ul class="list-group">
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

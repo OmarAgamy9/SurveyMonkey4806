@@ -16,4 +16,9 @@ public class CreateQuestionController {
 		return "createOEQuestion";
 	}
 
+	@GetMapping("/createDDQuestion")
+	public String ddQuestion() {
+		return "createDDQuestion";
+	}
+
 }
