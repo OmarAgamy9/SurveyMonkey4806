@@ -1,7 +1,5 @@
 package com.SurveyMonkey.model;
 
-import com.SurveyMonkey.model.questions.types.QType;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +8,7 @@ import java.util.List;
 public class CreateSurvey {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @OneToMany(cascade = CascadeType.PERSIST)
@@ -28,7 +26,6 @@ public class CreateSurvey {
         this.id = id;
     }
 
-
     public List<QType> getQuestions() {
         return questionsMade;
     }
@@ -37,17 +34,13 @@ public class CreateSurvey {
         this.questionsMade = questionsMade;
     }
 
-
-    public void addQuestion(QType question){
+    public void addQuestion(QType question) {
         questionsMade.add(question);
     }
 
-
-    public void removeQuestion(QType question){
+    public void removeQuestion(QType question) {
         questionsMade.remove(question);
     }
-
-
 
     @Override
     public String toString() {
