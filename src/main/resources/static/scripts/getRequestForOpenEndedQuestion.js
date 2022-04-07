@@ -2,7 +2,7 @@ GET: $(document).ready(
     function() {
 
         // GET REQUEST
-        $("#getAllQuestions").click(function(event) {
+        $("#getOEQuestions").click(function(event) {
             event.preventDefault();
             ajaxGet();
         });
@@ -21,7 +21,7 @@ GET: $(document).ready(
                                 var user = "Question:  "
                                     + book.surveyQuestion
                                     + "<br>";
-                                $('#getResultDiv .list-group').append(
+                                $('#getResultOEDiv .list-group').append(
                                     user)
                             });
                         console.log("Success: ", result);
