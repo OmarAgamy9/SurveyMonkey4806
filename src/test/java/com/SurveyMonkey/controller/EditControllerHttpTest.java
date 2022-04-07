@@ -34,7 +34,7 @@ class EditControllerHttpTest {
     @Test
     public void editControllerShowsSurvey() throws Exception {
         CreateSurvey s = new CreateSurvey();
-        MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel(1, "SurveyQuestion 1", "1", "2", "3", "4");
+        MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel("SurveyQuestion 1", "1", "2", "3", "4");
         s.addQuestion(q1);
         String id = surveyRepository.save(s).getId().toString();
 
