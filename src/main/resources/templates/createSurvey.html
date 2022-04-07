@@ -5,6 +5,14 @@
     <title>Surveyor: Create Survey Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script type="text/javascript" src="scripts/createSurvey.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="scripts/postrequest.js"></script>
+    <script src="scripts/getrequest.js"></script>
 </head>
 <body>
   <h2>Create Survey</h2>
@@ -42,11 +50,20 @@
         button = "question" + increment;
 
           document.getElementById("addQuestion").insertAdjacentHTML("afterend",
-                "<form id='qbutton' class='selectQuestion'><h4>Select type of Question</h4><br><select name='questionTypes' id='questionTypes'><option value='multipleChoice'>Multiple Choice Question</option><option value='dropDown'>Drop Down Question</option></select><button type='button' onclick='removeQuestion(this)' >Remove question</button></form>");
+                "<form id='qbutton' class='selectQuestion'><h4>Select type of Question</h4><br><select name='questionTypes' id='questionTypes'><option value='multipleChoice'>Multiple Choice Question</option><option value='openEnded'>Open Ended Question</option></select><button type='button' onclick='goToQuestion(this)' >Go to add question </button> <button type='button' onclick='removeQuestion(this)' >Remove question</button></form>");
           document.getElementById("qbutton").id = button;
         }
 
-
+        function goToQuestion(th){
+            var e = document.getElementById("questionTypes");
+            var strUser = e.value;
+            if (strUser == "multipleChoice"){
+                location.href="createMCQuestion"
+            }
+            else if(strUser=="openEnded"){
+                location.href="createOEQuestion"
+            }
+        }
 
         function removeQuestion(th){
         var parentDiv = th.parentNode;
@@ -61,5 +78,15 @@
 
   </script>
 
+  <div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+      <button id="getAllQuestions" type="button" class="get-questions-button btn btn-primary">Get
+          All Questions
+      </button>
+      <div id="getResultDiv" style="padding: 20px 10px 20px 50px">
+          <ul class="list-group">
+          </ul>
+      </div>
+
+  </div>
 </body>
 </html>
