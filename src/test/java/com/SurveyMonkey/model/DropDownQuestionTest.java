@@ -23,29 +23,29 @@ class DropDownQuestionTest {
 
     @Test
     void setSurveyQuestion() {
-        ddq.setSurveyQuestion("How are you?");
+        ddq.setQuestion("How are you?");
         assertEquals("How are you?",ddq.getQuestion());
     }
 
     @Test
     void getoption1() {
-        assertEquals("Hassan",ddq.getoption1());
+        assertEquals("Hassan",ddq.getOption1());
     }
 
     @Test
     void setoption1() {
-        ddq.setoption1("Mike");
-        assertEquals("Mike",ddq.getoption1());
+        ddq.setOption1("Mike");
+        assertEquals("Mike",ddq.getOption1());
     }
 
     @Test
     void getoption2() {
-        assertEquals("Omar",ddq.getoption2());
+        assertEquals("Omar",ddq.getOption2());
     }
 
     @Test
     void setoption2() {
-        ddq.setoption2("Megan");
-        assertEquals("Megan",ddq.getoption2());
+        ddq.setOption2("Megan");
+        assertEquals("Megan",ddq.getOption2());
     }
 }

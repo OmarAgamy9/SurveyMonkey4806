@@ -1,11 +1,14 @@
 package com.SurveyMonkey.model;
 
 import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class DropDownQuestion extends QType {
     private String option1;
     private String option2;
+
 
     public DropDownQuestion() {
     }
@@ -39,8 +42,5 @@ public class DropDownQuestion extends QType {
                 "Question: [id=%d, number='%s', question='%s', option1='%s', option2='%s']",
                 this.getId(), this.getNumber(), this.getQuestion(), option1, option2);
     }
-    public static void main(String[] args) {
-        DropDownQuestion question = new DropDownQuestion(1,"name?","hassan","nasr");
-        System.out.print(question.getSurveyQuestion());
-    }
+    
 }

@@ -2,7 +2,7 @@ GET: $(document).ready(
 		function() {
 
 			// GET REQUEST
-			$("#getQuestions").click(function(event) {
+			$("#getDDQuestions").click(function(event) {
 				event.preventDefault();
 				ajaxGet();
 			});
