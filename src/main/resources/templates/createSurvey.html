@@ -13,6 +13,8 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="scripts/getrequest.js"></script>
+    <script src="scripts/getRequestForOpenEndedQuestion.js"></script>
     <script src="scripts/getrequestForDropDownQuestion.js"></script>
 </head>
 <body>
@@ -84,10 +86,24 @@
   </script>
 
 <div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+    <button id="getAllQuestions" type="button" class="get-questions-button btn btn-primary">Get
+        MCQ Questions
+    </button>
+    <button id="getOEQuestions" type="button" class="get-questions-button btn btn-primary">Get
+        Open-Ended Questions
+    </button>
     <button id="getDDQuestions" type="button" class="get-questions-button btn btn-primary">Get
         Drop Down Questions
     </button>
-    <div id="getDropDownDiv" style="padding: 20px 10px 20px 50px">
+    <div id="getResultMCQDiv" style="padding: 20px 10px 20px 50px">
+        <ul class="list-group">
+        </ul>
+    </div>
+    <div id="getResultOEDiv" style="padding: 20px 10px 20px 50px">
+        <ul class="list-group">
+        </ul>
+    </div>
+    <div id="getResultDDDiv" style="padding: 20px 10px 20px 50px">
         <ul class="list-group">
         </ul>
     </div>

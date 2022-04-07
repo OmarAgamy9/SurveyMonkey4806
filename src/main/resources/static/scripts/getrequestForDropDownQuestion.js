@@ -23,7 +23,7 @@ GET: $(document).ready(
 												+ "<option value='option1'>" + question.option1 + "</option>"
 												+ "<option value='option2'>" + question.option2 + "</option></select>"
 												+ "<br>";
-										$('#getResultDiv .list-group').append(
+										$('#getResultDDDiv .list-group').append(
 												user)
 									});
 							console.log("Success: ", result);

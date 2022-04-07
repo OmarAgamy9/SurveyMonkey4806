@@ -24,7 +24,7 @@ GET: $(document).ready(
 												+ " Choice 3: " + book.choiceThree
 												+ " Choice 4: " + book.choiceFour
 											+ "<br>";
-										$('#getResultDiv .list-group').append(
+										$('#getResultMCQDiv .list-group').append(
 												user)
 									});
 							console.log("Success: ", result);
@@ -37,7 +37,6 @@ GET: $(document).ready(
 						$("#getResultDiv").html("<strong>Error</strong>");
 						console.log("ERROR: ", e);
 					}
-				}
-				location.href = 'createSurvey');
+				});
 			}
 		})

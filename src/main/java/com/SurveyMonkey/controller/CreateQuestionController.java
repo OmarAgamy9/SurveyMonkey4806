@@ -26,9 +26,4 @@ public class CreateQuestionController {
 		return "createDDQuestion";
 	}
 
-	@GetMapping("/createSurvey")
-	public String createSurvey() {
-		return "createSurvey";
-	}
-
 }
