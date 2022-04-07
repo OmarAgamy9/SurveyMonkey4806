@@ -1,17 +1,19 @@
 package com.SurveyMonkey.controller;
 
 import com.SurveyMonkey.model.CreateSurvey;
-import com.SurveyMonkey.repositories.CreateSurveyRepository;
 import com.SurveyMonkey.model.MultipleChoiceQuestionModel;
-import com.SurveyMonkey.repositories.MultipleChoiceRepository;
 import com.SurveyMonkey.model.QType;
+import com.SurveyMonkey.repositories.CreateSurveyRepository;
+import com.SurveyMonkey.repositories.MultipleChoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;

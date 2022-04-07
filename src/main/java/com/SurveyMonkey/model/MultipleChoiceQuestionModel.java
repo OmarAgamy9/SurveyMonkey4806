@@ -1,11 +1,15 @@
 package com.SurveyMonkey.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-
 public class MultipleChoiceQuestionModel extends QType {
 
+	@Id
+	@Column(name="MCQID")
+	String mcqid;
 	private String surveyQuestion;
 	private String choiceOne;
 	private String choiceTwo;
@@ -15,14 +19,20 @@ public class MultipleChoiceQuestionModel extends QType {
 	public MultipleChoiceQuestionModel() {
 	}
 
-	public MultipleChoiceQuestionModel(Integer number, String surveyQuestion, String choiceOne, String choiceTwo,
+	public MultipleChoiceQuestionModel(String surveyQuestion, String choiceOne, String choiceTwo,
 			String choiceThree, String choiceFour) {
-		this.setNumber(number);
-		this.setQuestion(surveyQuestion);
 		this.choiceOne = choiceOne;
 		this.choiceTwo = choiceTwo;
 		this.choiceThree = choiceThree;
 		this.choiceFour = choiceFour;
+	}
+
+	public void setQuestion(String surveyQuestion) {
+		this.surveyQuestion=surveyQuestion;
+	}
+
+	public String getSurveyQuestion(){
+		return this.surveyQuestion;
 	}
 
 	public String getChoiceOne() {
@@ -60,8 +70,8 @@ public class MultipleChoiceQuestionModel extends QType {
 	@Override
 	public String toString() {
 		return String.format(
-				"Question: [id=%d, number='%s', question='%s', choice1='%s', choice2='%s',choice3='%s',choice4='%s']",
-				this.getId(), this.getNumber(), surveyQuestion, choiceOne, choiceTwo, choiceThree, choiceFour);
+				"Question: [question='%s', choice1='%s', choice2='%s',choice3='%s',choice4='%s']",
+				surveyQuestion, choiceOne, choiceTwo, choiceThree, choiceFour);
 	}
 
 }
