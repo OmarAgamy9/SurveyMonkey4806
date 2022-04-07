@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 public class DropDownQuestionController {
+
     List<QType> dropDownQuestions = new ArrayList<>();
     @Autowired
     private CreateSurveyRepository createSurveyRepository;
@@ -49,4 +50,11 @@ public class DropDownQuestionController {
         ServiceResponse<List<QType>> response = new ServiceResponse<>("success", dropDownQuestions);
         return new ResponseEntity<Object>(response, HttpStatus.OK);
     }
+
+//    @PostMapping("/addOption")
+//    public ResponseEntity<Object> addOption(@RequestBody DropDownQuestion dropDown){
+//        ServiceResponse<DropDownQuestion> response = new ServiceResponse<DropDownQuestion>("success", dropDown);
+//        return new ResponseEntity<Object>(response, HttpStatus.OK);
+//    }
+
 }

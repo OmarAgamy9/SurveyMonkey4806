@@ -4,48 +4,72 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Surveyor: Create Survey Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script type="text/javascript" src="scripts/createSurvey.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="scripts/getrequest.js"></script>
+    <script src="scripts/getRequestForOpenEndedQuestion.js"></script>
+    <script src="scripts/getrequestForDropDownQuestion.js"></script>
 </head>
 <body>
-  <h2>Create Survey</h2>
+<h2>Create Survey</h2>
 
-  <div class="surveyTitle">
+<div class="surveyTitle">
     <input type="text" placeholder="Survey Title">
-  </div>
+</div>
 
-  <br>
+<br>
 
-  <div class="surveyQuestions">
+<div class="surveyQuestions">
     <button type="button" onclick="addQuestion()">Add question</button>
-  </div>
+</div>
 
-  <div id="addQuestion">
-
-
-
-  </div>
-
-  <div class="finishSurvey">
-      <button type='button'>Finish Survey</button>
-  </div>
+<div id="addQuestion">
 
 
 
-  <script type="text/javascript">
+</div>
+
+<div class="finishSurvey">
+    <button type='button'>Finish Survey</button>
+</div>
+
+
+
+<script type="text/javascript">
 
       var increment = 0;
       let button = "question";
-      element.addEventListener("click", addQuestion);
+      //element.addEventListener("click", addQuestion);
 
         function addQuestion() {
         increment = increment+1;
         button = "question" + increment;
 
           document.getElementById("addQuestion").insertAdjacentHTML("afterend",
-                "<form id='qbutton' class='selectQuestion'><h4>Select type of Question</h4><br><select name='questionTypes' id='questionTypes'><option value='multipleChoice'>Multiple Choice Question</option><option value='dropDown'>Drop Down Question</option></select><button type='button' onclick='removeQuestion(this)' >Remove question</button></form>");
+                "<form id='qbutton' class='selectQuestion'><h4>Select type of Question</h4><br><select name='questionTypes' id='questionTypes'><option value='multipleChoice'>Multiple Choice Question</option><option value='openEnded'>Open Ended Question</option><option value='dropDown'>Drop Down Question</option></select><button type='button' onclick='goToQuestion(this)' >Go to add question </button> <button type='button' onclick='removeQuestion(this)' >Remove question</button></form>");
           document.getElementById("qbutton").id = button;
         }
 
+        function goToQuestion(th){
+            var e = document.getElementById("questionTypes");
+            var strUser = e.value;
+            if (strUser == "multipleChoice"){
+                location.href="createMCQuestion"
+            }
+            else if(strUser=="openEnded"){
+                location.href="createOEQuestion"
+            }
+            else if(strUser =="dropDown"){
+                location.href ="createDDQuestion"
+            }
+        }
 
 
         function removeQuestion(th){
@@ -61,5 +85,29 @@
 
   </script>
 
+<div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+    <button id="getAllQuestions" type="button" class="get-questions-button btn btn-primary">Get
+        MCQ Questions
+    </button>
+    <button id="getOEQuestions" type="button" class="get-questions-button btn btn-primary">Get
+        Open-Ended Questions
+    </button>
+    <button id="getDDQuestions" type="button" class="get-questions-button btn btn-primary">Get
+        Drop Down Questions
+    </button>
+    <div id="getResultMCQDiv" style="padding: 20px 10px 20px 50px">
+        <ul class="list-group">
+        </ul>
+    </div>
+    <div id="getResultOEDiv" style="padding: 20px 10px 20px 50px">
+        <ul class="list-group">
+        </ul>
+    </div>
+    <div id="getResultDDDiv" style="padding: 20px 10px 20px 50px">
+        <ul class="list-group">
+        </ul>
+    </div>
+
+</div>
 </body>
 </html>

@@ -10,12 +10,20 @@ public class OpenEndedQuestion extends QType {
     public OpenEndedQuestion() {
     }
 
-    public OpenEndedQuestion(Integer number, String surveyQuestion, String openEndedAnswer) {
-        this.setNumber(number);
-        this.setQuestion(surveyQuestion);
+    public OpenEndedQuestion(String surveyQuestion, String openEndedAnswer) {
+        this.surveyQuestion=surveyQuestion;
         this.openEndedAnswer = openEndedAnswer;
-
     }
+
+
+    public String getSurveyQuestion() {
+        return surveyQuestion;
+    }
+
+    public void setSurveyQuestion(String surveyQuestion) {
+        this.surveyQuestion = surveyQuestion;
+    }
+
 
     public String getOpenEndedAnswer() {
         return openEndedAnswer;
