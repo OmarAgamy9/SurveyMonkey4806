@@ -16,7 +16,6 @@ $(document).ready(
 					choiceTwo : $("#choiceTwo").val(),
 					choiceThree : $("#choiceThree").val(),
 					choiceFour : $("#choiceFour").val()
-
 				}
 
 				// DO POST
