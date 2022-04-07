@@ -37,7 +37,6 @@ GET: $(document).ready(
 						$("#getResultDiv").html("<strong>Error</strong>");
 						console.log("ERROR: ", e);
 					}
-				}
-				location.href = 'createSurvey');
+				});
 			}
 		})
