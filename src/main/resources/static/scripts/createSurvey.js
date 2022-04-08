@@ -185,4 +185,5 @@ function saveSurvey() {
     xhr.open("POST", SAVE_SURVEY_URL, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify({ title: title, questions: data }));
+    window.location.href = "/finishCreate";
 }
