@@ -9,18 +9,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 public class SurveyController {
     @Autowired private SurveyService service;
 
-    @GetMapping("/surveyResults/{id}")
-    public String displaySurveyResults(@PathVariable("id") Integer id, Model model) {
-        CreateSurvey survey = service.get(id);
-        model.addAttribute("survey", survey);
-        model.addAttribute("title_page", "Survey Results");
-        return "surveyResults";
+    @GetMapping("/surveyorHome")
+    public String showSurveyResults(){
+        return "surveyorHome";
     }
 
+    @GetMapping("/createSurvey")
+    public String createSurvey(){
+        return "createSurvey";
+    }
 
 
 }
