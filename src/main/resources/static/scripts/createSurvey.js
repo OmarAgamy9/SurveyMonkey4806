@@ -13,28 +13,29 @@ const QTypeNameMap = {
 // Creates delete button, question label and input fields
 function createForm(form) {
     uid += 1;
+    const myuid = uid;
 
     form.setAttribute("class", "mcqForm");
-    form.setAttribute("id", "mcq" + uid);
+    form.setAttribute("id", "mcq" + myuid);
 
     let delButton = document.createElement("button");
     delButton.onclick = function () {
-        deleteQuestion(uid);
+        deleteQuestion(myuid);
     };
     delButton.setAttribute("type", "button");
-    delButton.setAttribute("id", "deleteButton" + uid);
+    delButton.setAttribute("id", "deleteButton" + myuid);
     delButton.setAttribute("class", "deleteButton");
     delButton.innerHTML = "Delete";
     form.appendChild(delButton);
 
     let question = document.createElement("input");
     question.setAttribute("type", "text");
-    question.setAttribute("name", "question" + uid);
-    question.setAttribute("id", "question" + uid);
+    question.setAttribute("name", "question" + myuid);
+    question.setAttribute("id", "question" + myuid);
     question.setAttribute("class", "questionInput");
 
     let questionLabel = document.createElement("label");
-    questionLabel.setAttribute("for", "question" + uid);
+    questionLabel.setAttribute("for", "question" + myuid);
     questionLabel.setAttribute("class", "questionLabel");
     questionLabel.innerHTML = "Question Text";
 
@@ -124,10 +125,10 @@ function createDDQ() {
     renderQuestions();
 }
 
-function createQuestionHeader(n, type) {
+function createQuestionHeader(q) {
     let title = document.createElement("div");
     title.setAttribute("class", "questionTitle");
-    title.innerHTML = "Question " + n + " - " + QTypeNameMap[type];
+    title.innerHTML = "Question " + q.num + " - " + QTypeNameMap[q.type];
     return title;
 }
 
@@ -136,9 +137,7 @@ function renderQuestions() {
     questionsDiv.innerHTML = "";
 
     allQuestions.forEach((question) => {
-        questionsDiv.appendChild(
-            createQuestionHeader(question.num, question.type)
-        );
+        questionsDiv.appendChild(createQuestionHeader(question));
         questionsDiv.appendChild(question.form);
     });
 }
