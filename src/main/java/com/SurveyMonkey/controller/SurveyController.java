@@ -24,5 +24,8 @@ public class SurveyController {
         return "createSurvey";
     }
 
-
+    @GetMapping("/finishCreate")
+    public String finishCreate() {
+        return "finishCreate";
+    }
 }
