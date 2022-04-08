@@ -11,11 +11,13 @@ public class CreateSurvey {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String title;
+
     @OneToMany(cascade = CascadeType.PERSIST)
-    private List<QType> questionsMade;
+    private List<QType> questions;
 
     public CreateSurvey() {
-        questionsMade = new ArrayList<>();
+        questions = new ArrayList<>();
     }
 
     public Long getId() {
@@ -27,26 +29,34 @@ public class CreateSurvey {
     }
 
     public List<QType> getQuestions() {
-        return questionsMade;
+        return questions;
     }
 
     public void setQuestions(List<QType> questionsMade) {
-        this.questionsMade = questionsMade;
+        this.questions = questionsMade;
     }
 
     public void addQuestion(QType question) {
-        questionsMade.add(question);
+        questions.add(question);
     }
 
     public void removeQuestion(QType question) {
-        questionsMade.remove(question);
+        questions.remove(question);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String name) {
+        this.title = name;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Number of questions: [number=%d]\nQ1: %s",
-                this.questionsMade.size(), this.questionsMade.get(0));
+                "Id: %d - Title: %s - Number of questions: [number=%d]",
+                this.getId(), this.title, this.questions.size());
     }
 
 }

@@ -41,8 +41,8 @@ public class EditController {
         // TO SEE THE CHANGE
         if (req.getParameter("id") == null) {
             CreateSurvey s = new CreateSurvey();
-            MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel("q1", "1", "2", "3", "4");
-            MultipleChoiceQuestionModel q2 = new MultipleChoiceQuestionModel("q2", "a", "b", "c", "d");
+            MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel(1, "q1", "1", "2", "3", "4");
+            MultipleChoiceQuestionModel q2 = new MultipleChoiceQuestionModel(2, "q2", "a", "b", "c", "d");
             s.addQuestion(q1);
             s.addQuestion(q2);
             CreateSurvey c = surveyRepository.save(s);
@@ -98,16 +98,16 @@ public class EditController {
                 newQuestion.setQuestion(formData.getFirst("surveyQuestion" + number));
                 formData.remove("surveyQuestion" + number);
 
-                newQuestion.setChoiceOne(formData.getFirst("choiceOne" + number));
+                newQuestion.setOption1(formData.getFirst("choiceOne" + number));
                 formData.remove("choiceOne" + number);
 
-                newQuestion.setChoiceTwo(formData.getFirst("choiceTwo" + number));
+                newQuestion.setOption2(formData.getFirst("choiceTwo" + number));
                 formData.remove("choiceTwo" + number);
 
-                newQuestion.setChoiceThree(formData.getFirst("choiceThree" + number));
+                newQuestion.setOption3(formData.getFirst("choiceThree" + number));
                 formData.remove("choiceThree" + number);
 
-                newQuestion.setChoiceFour(formData.getFirst("choiceFour" + number));
+                newQuestion.setOption4(formData.getFirst("choiceFour" + number));
                 formData.remove("choiceFour" + number);
 
                 // ADD THE QUESTION TO THE NEW LIST FOR THE SURVEY

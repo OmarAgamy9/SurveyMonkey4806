@@ -3,72 +3,63 @@ package com.SurveyMonkey.model;
 import javax.persistence.Entity;
 
 @Entity
-
 public class MultipleChoiceQuestionModel extends QType {
 
-	private String surveyQuestion;
-	private String choiceOne;
-	private String choiceTwo;
-	private String choiceThree;
-	private String choiceFour;
+	private String option1;
+	private String option2;
+	private String option3;
+	private String option4;
 
 	public MultipleChoiceQuestionModel() {
 	}
 
-	public MultipleChoiceQuestionModel(String surveyQuestion, String choiceOne, String choiceTwo,
-			String choiceThree, String choiceFour) {
-		this.surveyQuestion=surveyQuestion;
-		this.choiceOne = choiceOne;
-		this.choiceTwo = choiceTwo;
-		this.choiceThree = choiceThree;
-		this.choiceFour = choiceFour;
+	public MultipleChoiceQuestionModel(Integer number, String surveyQuestion, String option1, String option2,
+			String option3, String option4) {
+		this.setNumber(number);
+		this.setQuestion(surveyQuestion);
+		this.option1 = option1;
+		this.option2 = option2;
+		this.option3 = option3;
+		this.option4 = option4;
 	}
 
-	public String getSurveyQuestion(){
-		return surveyQuestion;
+	public String getOption1() {
+		return option1;
 	}
 
-	public void setSurveyQuestion(String surveyQuestion){
-		this.surveyQuestion=surveyQuestion;
+	public void setOption1(String choiceOne) {
+		this.option1 = choiceOne;
 	}
 
-	public String getChoiceOne() {
-		return choiceOne;
+	public String getOption2() {
+		return option2;
 	}
 
-	public void setChoiceOne(String choiceOne) {
-		this.choiceOne = choiceOne;
+	public void setOption2(String choiceTwo) {
+		this.option2 = choiceTwo;
 	}
 
-	public String getChoiceTwo() {
-		return choiceTwo;
+	public String getOption3() {
+		return option3;
 	}
 
-	public void setChoiceTwo(String choiceTwo) {
-		this.choiceTwo = choiceTwo;
+	public void setOption3(String choiceThree) {
+		this.option3 = choiceThree;
 	}
 
-	public String getChoiceThree() {
-		return choiceThree;
+	public String getOption4() {
+		return option4;
 	}
 
-	public void setChoiceThree(String choiceThree) {
-		this.choiceThree = choiceThree;
-	}
-
-	public String getChoiceFour() {
-		return choiceFour;
-	}
-
-	public void setChoiceFour(String choiceFour) {
-		this.choiceFour = choiceFour;
+	public void setOption4(String choiceFour) {
+		this.option4 = choiceFour;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Question: [choice1='%s', choice2='%s',choice3='%s',choice4='%s']",
-				 surveyQuestion, choiceOne, choiceTwo, choiceThree, choiceFour);
+				"Question: [id=%d, number='%s', question='%s', option1='%s', option2='%s', option3='%s',option4='%s']",
+				this.getId(), this.getNumber(), this.getQuestion(), option1, option2, option3, option4);
 	}
 
 }

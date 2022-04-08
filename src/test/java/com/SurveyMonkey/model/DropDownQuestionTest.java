@@ -12,7 +12,7 @@ class DropDownQuestionTest {
 
     @BeforeEach
     void setUp() {
-        ddq = new DropDownQuestion(1,"Name?","Hassan","Omar");
+        ddq = new DropDownQuestion(1,"Name?","Hassan","Omar","Taher","Desmond");
     }
 
     @Test

@@ -1,0 +1,54 @@
+.createSurveyControlPanel {
+
+}
+
+.panelTable {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black solid;
+    align-items: center;
+}
+
+.saveButton {
+}
+
+.deleteButton {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.questionTitle {
+    font-size: 18px;
+    padding: 0.5em 1em 0.5em;
+    margin: 0.5em 0 0.5em;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.questionLabel {
+    font-weight: bold;
+}
+
+.questionInput {
+    display: block;
+    width: 50%;
+    margin-bottom: 1em;
+}
+
+.optionLabel {
+    display: block;
+}
+
+.optionInput {
+    margin-bottom: 0.5em;
+}
+
+.mcqForm {
+    margin-bottom: 1.5em;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.surveyTitle {
+    margin-bottom: 1em;
+}
