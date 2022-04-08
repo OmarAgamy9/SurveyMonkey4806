@@ -3,6 +3,7 @@ $(document).ready(
 
 			// SUBMIT FORM
 			$("#questionForm").submit(function(event) {
+				// Prevent the form from submitting via the browser.
 				event.preventDefault();
 				ajaxPost();
 			});
@@ -11,29 +12,20 @@ $(document).ready(
 
 				// PREPARE FORM DATA
 				var formData = {
-					surveyQuestion : $("#surveyQuestion").val(),
-					choiceOne : $("#choiceOne").val(),
-					choiceTwo : $("#choiceTwo").val(),
-					choiceThree : $("#choiceThree").val(),
-					choiceFour : $("#choiceFour").val()
+					question : $("#surveyQuestion").val(),
+					option1 : $("#choiceOne").val(),
+					option2 : $("#choiceTwo").val()
 				}
 
 				// DO POST
 				$.ajax({
 					type : "POST",
 					contentType : "application/json",
-					url : "saveQuestion",
+					url : "saveDropDownQuestion",
 					data : JSON.stringify(formData),
 					dataType : 'json',
 					success : function(result) {
-						if (result.status == "success") {
-							$("#postResultDiv").html(
-									"Question '" + result.data.surveyQuestion + "'  "
-											+ " Saved Successfully!" +
-											"</p>");
-						} else {
-							$("#postResultDiv").html("<strong>Error</strong>");
-						}
+
 						console.log(result);
 					},
 					error : function(e) {

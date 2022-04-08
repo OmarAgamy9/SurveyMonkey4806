@@ -41,8 +41,8 @@ public class EditController {
         // TO SEE THE CHANGE
         if (req.getParameter("id") == null) {
             CreateSurvey s = new CreateSurvey();
-            MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel(1, "q1", "1", "2", "3", "4");
-            MultipleChoiceQuestionModel q2 = new MultipleChoiceQuestionModel(2, "q2", "a", "b", "c", "d");
+            MultipleChoiceQuestionModel q1 = new MultipleChoiceQuestionModel("q1", "1", "2", "3", "4");
+            MultipleChoiceQuestionModel q2 = new MultipleChoiceQuestionModel("q2", "a", "b", "c", "d");
             s.addQuestion(q1);
             s.addQuestion(q2);
             CreateSurvey c = surveyRepository.save(s);

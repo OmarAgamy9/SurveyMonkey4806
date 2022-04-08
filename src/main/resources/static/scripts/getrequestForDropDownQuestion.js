@@ -1,7 +1,8 @@
 GET: $(document).ready(
 		function() {
+
 			// GET REQUEST
-			$("#getAllQuestions").click(function(event) {
+			$("#getDDQuestions").click(function(event) {
 				event.preventDefault();
 				ajaxGet();
 			});
@@ -10,21 +11,19 @@ GET: $(document).ready(
 			function ajaxGet() {
 				$.ajax({
 					type : "GET",
-					url : "getQuestions",
+					url : "getDropDownQuestions",
 					success : function(result) {
 						if (result.status == "success") {
 							$('#getResultDiv ul').empty();
 							var custList = "";
 							$.each(result.data,
-									function(i, book) {
-										var user = "Question:  "
-												+ book.surveyQuestion
-												+ " Choice 1: " + book.choiceOne
-												+ " Choice 2: " + book.choiceTwo
-												+ " Choice 3: " + book.choiceThree
-												+ " Choice 4: " + book.choiceFour
-											+ "<br>";
-										$('#getResultMCQDiv .list-group').append(
+									function(i, question) {
+										var user = "<label for='questions'>" + question.question +  "</label> "
+												+ "<select name='questions' id='questions'>"
+												+ "<option value='option1'>" + question.option1 + "</option>"
+												+ "<option value='option2'>" + question.option2 + "</option></select>"
+												+ "<br>";
+										$('#getResultDDDiv .list-group').append(
 												user)
 									});
 							console.log("Success: ", result);

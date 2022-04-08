@@ -3,6 +3,8 @@ package com.SurveyMonkey.model;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class DropDownQuestion extends QType {
@@ -10,6 +12,7 @@ public class DropDownQuestion extends QType {
     private String option2;
     private String option3;
     private String option4;
+
 
     public DropDownQuestion() {
     }
@@ -60,4 +63,5 @@ public class DropDownQuestion extends QType {
                 "Question: [id=%d, number='%s', question='%s', option1='%s', option2='%s, option4='%s', option3='%s']",
                 this.getId(), this.getNumber(), this.getQuestion(), option1, option2, option3, option4);
     }
+    
 }

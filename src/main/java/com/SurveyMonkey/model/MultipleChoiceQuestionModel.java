@@ -14,8 +14,7 @@ public class MultipleChoiceQuestionModel extends QType {
 	}
 
 	public MultipleChoiceQuestionModel(Integer number, String surveyQuestion, String option1, String option2,
-									   String option3, String option4) {
-
+			String option3, String option4) {
 		this.setNumber(number);
 		this.setQuestion(surveyQuestion);
 		this.option1 = option1;
